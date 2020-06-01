@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="liebman.met.neo.MetServiceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-05-27T19:40:07" hostname="Dell-3000" time="12.621">
+  <properties/>
+  <testcase name="getDepartment" classname="liebman.met.neo.MetServiceTest" time="1.788"/>
+  <testcase name="getObject" classname="liebman.met.neo.MetServiceTest" time="5.295"/>
+  <testcase name="getMetadata" classname="liebman.met.neo.MetServiceTest" time="5.538"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
