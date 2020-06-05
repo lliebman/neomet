@@ -1,15 +1,28 @@
 package liebman.met.neo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MetFeed {
 
-    Departments[] departments;
+    static class DepartmentList{
+        List<Departments> departments;
 
-    class Departments {
-        int departmentId;
-        String displayName;
+
+        static class Departments {
+            int departmentId;
+            String displayName;
+
+            @Override
+            public String toString() {
+                return displayName;
+            }
+        }
     }
 
-    int[] objectIDs;
+    static class DepObjList{
+        ArrayList<Integer> objectIDs;
+    }
 
     String primaryImage;
 

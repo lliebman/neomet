@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="liebman.met.neo.MetControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-06-05T19:55:35" hostname="Dell-3000" time="7.723">
+  <properties/>
+  <testcase name="getCallMetadata" classname="liebman.met.neo.MetControllerTest" time="7.723"/>
+  <system-out><![CDATA[in metadata
+title: title
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,15 +1,12 @@
 package liebman.met.neo;
 
-import com.google.inject.Guice;
-import com.google.inject.Injector;
-
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicArrowButton;
 import java.awt.*;
 
 public class MetFrame extends JFrame {
 
-    private JPanel leftPanel;
+    private JPanel topPanel;
     JComboBox departmentsComboBox;
 
     private JPanel rightPanel;
@@ -22,9 +19,11 @@ public class MetFrame extends JFrame {
     private BasicArrowButton previousButton;
 
     MetController controller;
+    MetService service;
 
-    int depID;
     int index;
+    int totalObjects;
+    int depID;
 
     public MetFrame() {
         setSize(800, 600);
@@ -32,11 +31,9 @@ public class MetFrame extends JFrame {
         setTitle("Met Archives Search Tool");
         setLayout(new BorderLayout());
 
-        controller.callDepartment();
-
-        leftPanel = new JPanel();
+        topPanel = new JPanel();
         departmentsComboBox = new JComboBox();
-        leftPanel.add(departmentsComboBox);
+        topPanel.add(departmentsComboBox);
         departmentsComboBox.addActionListener(ActionEvent -> {getObject();});
 
         rightPanel = new JPanel();
@@ -44,6 +41,9 @@ public class MetFrame extends JFrame {
         imageLabel = new JLabel();
         titleLabel = new JLabel();
         dateLabel = new JLabel();
+        imageLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        titleLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        dateLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         rightPanel.add(imageLabel);
         rightPanel.add(titleLabel);
         rightPanel.add(dateLabel);
@@ -52,16 +52,52 @@ public class MetFrame extends JFrame {
         bottomPanel.setLayout(new FlowLayout());
         nextButton = new BasicArrowButton(SwingConstants.EAST);
         previousButton = new BasicArrowButton(SwingConstants.WEST);
+        nextButton.addActionListener(ActionEvent -> {nextIndex();});
+        previousButton.addActionListener(ActionEvent -> {previousIndex();});
         bottomPanel.add(previousButton);
         bottomPanel.add(nextButton);
 
-        add(leftPanel, BorderLayout.LINE_START);
+        add(topPanel, BorderLayout.PAGE_START);
         add(rightPanel, BorderLayout.CENTER);
         add(bottomPanel, BorderLayout.PAGE_END);
+
+        service = new MetFactory().getInstance();
+        controller = new MetController(service, imageLabel, titleLabel, dateLabel, nextButton, previousButton,
+                departmentsComboBox, this);
+        controller.callDepartment();
     }
 
     private void getObject(){
-        controller.callObjects(Integer.toString(depID));
+        MetFeed.DepartmentList.Departments thisDep = (MetFeed.DepartmentList.Departments)
+                departmentsComboBox.getSelectedItem();
+        depID = thisDep.departmentId;
+        index = 0;
+        System.out.println("called objects of department" + depID);
+        controller.callObjects(depID);
+    }
+
+    protected void setTotalObjects(int total){
+        this.totalObjects = total;
+    }
+
+    private void nextIndex(){
+        if (index == totalObjects - 1){
+            index = 0;
+        }
+        else {
+        index++;
+        }
+        controller.callMetadata(index);
+    }
+
+    private void previousIndex(){
+        if (index == 0) {
+            index = totalObjects - 1;
+        }
+        else{
+            index--;
+        }
+        controller.callMetadata(index);
     }
 
     public static void main(String[] args) {

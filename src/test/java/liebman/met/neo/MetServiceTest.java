@@ -21,17 +21,17 @@ public class MetServiceTest {
         MetService service = retrofit.create((MetService.class));
 
         //when
-        Response<MetFeed> response = service.getDepartment().execute();
+        Response<MetFeed.DepartmentList> response = service.getDepartment().execute();
 
 
         //then
         assertTrue(response.toString(), response.isSuccessful());
-        MetFeed feed = response.body();
+        MetFeed.DepartmentList feed = response.body();
 
         assertNotNull(feed);
         assertNotNull(feed.departments);
-        assertNotNull(feed.departments[0].displayName);
-        assertNotNull(feed.departments[0].departmentId);
+        assertNotNull(feed.departments.get(0).displayName);
+        assertNotNull(feed.departments.get(0).departmentId);
     }
 
     @Test
@@ -44,12 +44,12 @@ public class MetServiceTest {
         MetService service = retrofit.create((MetService.class));
 
         //when
-        MetFeed feed = service.getDepartment().execute().body();
-        Response<MetFeed> response = service.getObject(Integer.toString(feed.departments[0].departmentId)).execute();
+        MetFeed.DepartmentList feed = service.getDepartment().execute().body();
+        Response<MetFeed.DepObjList> response = service.getObject(feed.departments.get(0).departmentId).execute();
 
         //then
         assertTrue(response.toString(), response.isSuccessful());
-        MetFeed feed2 = response.body();
+        MetFeed.DepObjList feed2 = response.body();
 
         assertNotNull(feed2);
         assertNotNull(feed2.objectIDs);
@@ -65,9 +65,9 @@ public class MetServiceTest {
         MetService service = retrofit.create((MetService.class));
 
         //when
-        MetFeed feed = service.getDepartment().execute().body();
-        MetFeed feed2 = service.getObject(Integer.toString(feed.departments[0].departmentId)).execute().body();
-        Response<MetFeed> response = service.getMetadata(Integer.toString(feed2.objectIDs[0])).execute();
+        MetFeed.DepartmentList feed = service.getDepartment().execute().body();
+        MetFeed.DepObjList feed2 = service.getObject(feed.departments.get(0).departmentId).execute().body();
+        Response<MetFeed> response = service.getMetadata(feed2.objectIDs.get(0)).execute();
 
         //then
         assertTrue(response.toString(), response.isSuccessful());
