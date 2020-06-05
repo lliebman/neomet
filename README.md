@@ -13,11 +13,9 @@ Demonstrates:
 * Mockito
 * Model-View-Controller pattern
 * Factory pattern
-* Executable [jar] file
+* Executable [jar](build/libs/neomet-1.0-SNAPSHOT.jar) file
 * Markdown
 
 ![screenshot1](screenshots/met1.PNG)
-
-![screenshot2](screenshots/met3.PNG)
 
 ![screenshot3](screenshots/met2.PNG)

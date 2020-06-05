@@ -107,6 +107,7 @@ public class MetController{
                 }
                 else {
                     try {
+                        imageLabel.setText("");
                         URL url = new URL(feed.primaryImage);
                         Image image = ImageIO.read(url);
                         image = image.getScaledInstance(250, 250,
