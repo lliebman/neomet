@@ -72,7 +72,6 @@ public class MetFrame extends JFrame {
                 departmentsComboBox.getSelectedItem();
         depID = thisDep.departmentId;
         index = 0;
-        System.out.println("called objects of department" + depID);
         controller.callObjects(depID);
     }
 

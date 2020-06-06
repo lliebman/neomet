@@ -65,7 +65,6 @@ public class MetController{
     }
 
     public void callObjects(int depID) {
-        System.out.println("depID is: " + depID);
         service.getObject(depID).enqueue(getCallObjects());
     }
 
@@ -76,7 +75,6 @@ public class MetController{
                 MetFeed.DepObjList feed = response.body();
                 listIds = feed.objectIDs;
                 frame.setTotalObjects(listIds.size());
-                System.out.println("last object#: " + listIds.get(listIds.size()-1));
                 callMetadata(0);
             }
 
@@ -89,8 +87,6 @@ public class MetController{
     }
 
     public void callMetadata(int index) {
-        System.out.println("index#:" + index);
-//        System.out.println("metadata for object#:" + listIds.get(index));
         service.getMetadata(listIds.get(index)).enqueue(getCallMetadata());
     }
 
@@ -99,8 +95,6 @@ public class MetController{
             @Override
             public void onResponse(Call<MetFeed> call, Response<MetFeed> response) {
                 MetFeed feed = response.body();
-                System.out.println("in metadata");
-                System.out.println("title: " + String.valueOf(feed.title));
                 if (feed.primaryImage.equals("")){
                     imageLabel.setIcon(null);
                     imageLabel.setText("~no image found~");
