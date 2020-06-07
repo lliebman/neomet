@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d9bc81e4-8caa-489a-8d7d-2a2f5f3d25f7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/liebman/met/neo/MetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/liebman/met/neo/MetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/neomet-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/neomet-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/liebman/met/neo/MetFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/liebman/met/neo/MetFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/liebman/met/neo/MetControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/liebman/met/neo/MetControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +62,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.neomet [jar]">
+  <component name="RunManager" selected="Application.MetFrame">
     <configuration name="MetFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="liebman.met.neo.MetFrame" />
       <module name="neomet.main" />
@@ -187,22 +186,22 @@
       <screen x="0" y="0" width="1237" height="657" />
     </state>
     <state x="425" y="39" key="#com.intellij.ide.util.MemberChooser/0.0.1237.657@0.0.1237.657" timestamp="1591049519384" />
-    <state width="1195" height="2" key="GridCell.Tab.0.bottom" timestamp="1591400585210">
+    <state width="1195" height="42" key="GridCell.Tab.0.bottom" timestamp="1591502932667">
       <screen x="0" y="0" width="1237" height="657" />
     </state>
-    <state width="1195" height="2" key="GridCell.Tab.0.bottom/0.0.1237.657@0.0.1237.657" timestamp="1591400585210" />
-    <state width="1195" height="2" key="GridCell.Tab.0.center" timestamp="1591400585209">
+    <state width="1195" height="42" key="GridCell.Tab.0.bottom/0.0.1237.657@0.0.1237.657" timestamp="1591502932667" />
+    <state width="1195" height="42" key="GridCell.Tab.0.center" timestamp="1591502932666">
       <screen x="0" y="0" width="1237" height="657" />
     </state>
-    <state width="1195" height="2" key="GridCell.Tab.0.center/0.0.1237.657@0.0.1237.657" timestamp="1591400585209" />
-    <state width="1195" height="2" key="GridCell.Tab.0.left" timestamp="1591400585209">
+    <state width="1195" height="42" key="GridCell.Tab.0.center/0.0.1237.657@0.0.1237.657" timestamp="1591502932666" />
+    <state width="1195" height="42" key="GridCell.Tab.0.left" timestamp="1591502932666">
       <screen x="0" y="0" width="1237" height="657" />
     </state>
-    <state width="1195" height="2" key="GridCell.Tab.0.left/0.0.1237.657@0.0.1237.657" timestamp="1591400585209" />
-    <state width="1195" height="2" key="GridCell.Tab.0.right" timestamp="1591400585210">
+    <state width="1195" height="42" key="GridCell.Tab.0.left/0.0.1237.657@0.0.1237.657" timestamp="1591502932666" />
+    <state width="1195" height="42" key="GridCell.Tab.0.right" timestamp="1591502932666">
       <screen x="0" y="0" width="1237" height="657" />
     </state>
-    <state width="1195" height="2" key="GridCell.Tab.0.right/0.0.1237.657@0.0.1237.657" timestamp="1591400585210" />
+    <state width="1195" height="42" key="GridCell.Tab.0.right/0.0.1237.657@0.0.1237.657" timestamp="1591502932666" />
     <state width="1195" height="2" key="GridCell.Tab.1.bottom" timestamp="1591374453859">
       <screen x="0" y="0" width="1237" height="657" />
     </state>

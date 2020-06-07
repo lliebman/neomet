@@ -26,7 +26,7 @@ public class MetFrame extends JFrame {
     int depID;
 
     public MetFrame() {
-        setSize(800, 600);
+        setSize(800, 500);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setTitle("Met Archives Search Tool");
         setLayout(new BorderLayout());
@@ -72,6 +72,7 @@ public class MetFrame extends JFrame {
                 departmentsComboBox.getSelectedItem();
         depID = thisDep.departmentId;
         index = 0;
+        previousButton.setEnabled(false);
         controller.callObjects(depID);
     }
 
@@ -80,22 +81,20 @@ public class MetFrame extends JFrame {
     }
 
     private void nextIndex(){
-        if (index == totalObjects - 1){
-            index = 0;
+        if(index == totalObjects - 2) {
+            nextButton.setEnabled(false);
         }
-        else {
+        previousButton.setEnabled(true);
         index++;
-        }
         controller.callMetadata(index);
     }
 
     private void previousIndex(){
-        if (index == 0) {
-            index = totalObjects - 1;
+        if (index == 1) {
+            previousButton.setEnabled(false);
         }
-        else{
-            index--;
-        }
+        nextButton.setEnabled(true);
+        index--;
         controller.callMetadata(index);
     }
 
